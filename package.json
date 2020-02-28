@@ -37,28 +37,35 @@
 		],
 		"configuration": [
 			{
-				"title": "Warcraft 3",
-				"properties": {
-					"warcraft3.path.game": {
-						"type": "string",
-						"default": "C:\\Program Files\\Warcraft III\\x86_64\\Warcraft III.exe",
-						"markdownDescription": "Specify **Warcraft III.exe** path"
-					},
-					"warcraft3.path.editor": {
-						"type": "string",
-						"default": "C:\\Program Files\\Warcraft III\\x86_64\\World Editor.exe",
-						"markdownDescription": "Specify **World Editor.exe** path"
-					}
-				}
-			},
-			{
 				"title": "Ceres",
 				"properties": {
-					"ceres.compileObjects": {
+					"ceres.commands.mode": {
+						"type": "string",
+						"default": "default",
+						"enum": [
+							"default",
+							"custom"
+						],
+						"enumDescriptions": [
+							"Uses Ceres default build, run, exec commands functionalities",
+							"Uses extention custom workflow for build, run, exec"
+						]
+					},
+					"ceres.edit.compileObjects": {
 						"title": "Compile Objects:",
 						"type": "boolean",
 						"default": "false",
 						"markdownDescription": "Do you want to compile your obj data before opening world editor? \n\n\nYour object file should be in ./src/obj/lua/index.lua"
+					},
+					"ceres.warcraft3.path.game": {
+						"type": "string",
+						"default": "C:\\Program Files\\Warcraft III\\x86_64\\Warcraft III.exes",
+						"markdownDescription": "Specify **Warcraft III.exe** path"
+					},
+					"ceres.warcraft3.path.editor": {
+						"type": "string",
+						"default": "C:\\Program Files\\Warcraft III\\x86_64\\World Editor.exe",
+						"markdownDescription": "Specify **World Editor.exe** path"
 					}
 				}
 			}
