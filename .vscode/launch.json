@@ -11,7 +11,7 @@
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": [
-				"C:\\Users\\zocho\\Documents\\Projects\\Libs\\ceres-ts-template",
+				"C:\\Users\\zocho\\Documents\\Projects\\Libs\\Test30",
 				"--extensionDevelopmentPath=${workspaceFolder}"
 			],
 			"outFiles": [

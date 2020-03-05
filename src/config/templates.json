@@ -1,0 +1,14 @@
+{
+    "ceres-lua-template": {
+        "url":"https://github.com/ceres-wc3/ceres-lua-template/archive/master.zip",
+        "type":"lua"
+    },
+    "ceres-ts-template": {
+        "url":"https://github.com/ceres-wc3/ceres-ts-template/archive/master.zip",
+        "type":"ts"
+    },
+    "ceres-cerrie-ts-template":{
+        "url":"https://github.com/ceres-wc3/ceres-ts-template/tree/cerrie.zip",
+        "type":"ts"
+    }
+}

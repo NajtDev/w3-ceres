@@ -1,8 +1,19 @@
 import * as vscode from 'vscode';
+import * as cp from 'child_process';
 
-const commandMode: () => boolean = () => {
-    return vscode.workspace.getConfiguration('ceres').get('commands.mode') === "custom";
-};
+class OsFunc {
+    static exec = (cmd:string) => {
+        return new Promise((resolve, reject)=> {
+           cp.exec(cmd, (error, stdout, stderr) => {
+             if (error) {
+                reject(error);
+                return;
+            }
+            resolve(stdout);
+           });
+       });
+   };
+}
 
 interface CmdDefinition {
     exec: string | undefined,
@@ -10,14 +21,14 @@ interface CmdDefinition {
 }
 
 function createCmd(input:CmdDefinition) {
-    let cmd = `${input.exec} --`;
+    let cmd = `${input.exec}`;
 
     Object.entries(input.args).forEach(entry => {
         let key = entry[0];
         let value = entry[1];
-        cmd += ` --${key} "${value}"`;
+        cmd += ` ${key} "${value}"`;
     });
     return cmd;
 }
 
-export { createCmd, commandMode };
+export { createCmd, OsFunc };
