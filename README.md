@@ -1,65 +1,60 @@
-# w3-ceres README
-
-This is the README for your extension "w3-ceres". After writing up a brief description, we recommend including the following sections.
-
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension is created to simplify the usage of Ceres while developing inside of VSCode.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+#####Current Version Support :
+1. **Ceres Init Project**:
+    - Implements a fast way to initialize a new project.
+    - Current project list is based on ceres template project from github.
+        - Current project list: ```["ceres-lua-template", "ceres-ts-template", "ceres-ts-cerrie-template"]```
+    - *(warn)* Make sure to use this command in a parent directory as it will create the project dir for you.
+![Ceres Init Project](./assets/ceresinit.gif)
+2. **Ceres Build**:
+    - Basic implementation of the ```Ceres build -- --map map.w3x --output mpq```
+    - ```/maps``` folder enum. Enumerates the maps inside ```/maps``` and create a list picker so u dont need to type the name of the map for each build.
+    - Output list picker for ```mpq, dir, script```
+    - Compile Typescript to lua
+    ![Ceres Build](./assets/ceresbuild.gif)
+3. **Ceres Run**:
+    - Implements Ceres Build in the workflow.
+    - After a succesfull build opens ```Warcraft III.exe``` with the outputed build map.
+    - Original ```runconfig.json``` in your ceres project is not required here as the opening game step is managed fully by the extension.
+    ![Ceres Build](./assets/ceresrun.gif)
+4. **Ceres Edit**:
+    - Implements a quick way to edit the w3x maps from ```/maps``` folder by opening them in the world editor.
+    - ```/maps``` folder enum. Enumerates the maps inside ```/maps``` and create a list picker so u dont need to type the name of the map.
+    ![Ceres Build](./assets/ceresedit.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+U need to have a path to Ceres in **$PATH**
+
+**Typescript**:
+    - Npm package manager to install dependencies for a ts project
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `ceres.warcraft3.game.path`: path to your warcraft 3 executable.
+* `ceres.warcraft3.game.args`: custom arguments for warcraft 3 launchtime.
+* `ceres.warcraft3.game.autoclose`: Auto close the game during Ceres run execution.
+* `ceres.warcraft3.editor.path`: path to your world editor executable.
+* `ceres.warcraft3.editor.args`: custom arguments for world editor launchtime.
+
+If you are using the extension with a Typescript project not initialized by the extension, you need to specifie a custom setting in ```.vscode/settings.json```
+```json
+{
+  "ceres.project.lang": "ts"
+}
+```
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* No user feedback during commands execution
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of W3-Ceres

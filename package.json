@@ -2,8 +2,9 @@
 	"name": "w3-ceres",
 	"displayName": "w3-ceres",
 	"description": "Simplified Ceres implementation, project initialization, and custom workflows for Warcraft 3 Lua/TS maps.",
-	"version": "0.1",
-	"icon": "./logo/ceres.png",
+	"version": "1.0.0",
+	"publisher": "Najt",
+	"icon": "assets/logo.png",
 	"engines": {
 		"vscode": "^1.42.0"
 	},
