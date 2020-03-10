@@ -8,6 +8,10 @@
 	"engines": {
 		"vscode": "^1.42.0"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NajtDev/w3-ceres.git"
+	},
 	"categories": [
 		"Other"
 	],
