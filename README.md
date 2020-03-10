@@ -2,7 +2,7 @@
 
 This extension is created to simplify the usage of Ceres while developing inside of VSCode.
 
-#####Current Version Support :
+**Current Version Support :**
 1. **Ceres Init Project**:
     - Implements a fast way to initialize a new project.
     - Current project list is based on ceres template project from github.
